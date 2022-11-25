@@ -2,7 +2,7 @@
 
 #ubuntu üzerine docker ve docker-compose kurmak için gerekli script.
 
-sudo apt-get update
+sudo apt-get update -y && apt-get upgrade -y
 
 sudo apt install -y \
     apt-transport-https \
