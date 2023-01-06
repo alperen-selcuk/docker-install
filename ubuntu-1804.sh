@@ -27,10 +27,6 @@ sudo usermod -aG docker $USER
 sleep 3
 
 
-sudo systemctl start docker
-
-sudo systemctl enable docker
-
 printf '\nDocker installed successfully\n\n'
 
 COMPOSE_VERSION=`git ls-remote https://github.com/docker/compose | grep refs/tags | grep -oE "[0-9]+\.[0-9][0-9]+\.[0-9]+$" | sort --version-sort | tail -n 1`
@@ -38,5 +34,10 @@ COMPOSE_VERSION=`git ls-remote https://github.com/docker/compose | grep refs/tag
 sudo sh -c "curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose"
 
 sudo chmod +x /usr/local/bin/docker-compose
+
+
+sudo systemctl start docker
+
+sudo systemctl enable docker
 
 printf '\nDocker Compose installed successfully\n\n'
