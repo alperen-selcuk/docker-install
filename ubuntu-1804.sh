@@ -17,7 +17,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 
 sudo apt update -y
 
-apt-cache policy docker-ce
+apt-cache policy docker-ce -y
 
 sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 sudo apt-get -y install docker-compose
